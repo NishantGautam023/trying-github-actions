@@ -9,11 +9,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: welcome message
-        run: echo "My first Github Actions Job"
-
-      - name: List files
-        run: ls
-
-      - name: Read file
-        run: cat README.md
+      - name: List and Read files
+        run: |
+          echo "My first Github Actions Job"
+          ls -ltra
+          cat README.md
