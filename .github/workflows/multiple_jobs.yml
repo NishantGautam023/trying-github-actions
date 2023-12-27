@@ -11,10 +11,10 @@ jobs:
         run: sudo apt-install cowsay -y
 
       - name: Execute Cowsay Command
-        run: cowsay -f dragon "Run for cover, I am a dragon... RWARRR " >> dragon.txt
+        run: cowsay -f dragon "Run for cover, I am a dragon... RWARRR" >> dragon.txt
 
       - name: Upload the Dragon Text file
-        uses: actions/upload-artifacts@v3
+        uses: actions/upload-artifact@v3
         with:
             name: dragon-text-file
             path: dragon.txt
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download the Dragon Text file
-        uses: actions/download-artifacts@v3
+        uses: actions/download-artifact@v3
         with:
           name: dragon-text-file
 
@@ -38,7 +38,7 @@ jobs:
     steps:
 
       - name: Download the  Dragon Text file
-        uses: actions/download-artifacts@v3
+        uses: actions/download-artifact@v3
         with:
           name: dragon-text-file
 
